@@ -74,12 +74,14 @@ dependencies {
     debugImplementation libs.androidx.ui.tooling
     debugImplementation libs.androidx.ui.test.manifest
     // oboe
-    implementation project(':app:oboelib')
+    implementation project(':oboelib')
     // hilt
     implementation libs.hilt.android.v248
     kapt libs.hilt.compiler
     // hilt viewmodel
     implementation libs.androidx.hilt.navigation.compose
+    // splashscreen
+    implementation libs.androidx.core.splashscreen
     // permissions handling
     // implementation libs.accompanist.permissions.v0340
 }

@@ -8,6 +8,7 @@ import aleksei.vasilev.bullfinch.ui.theme.BullfinchTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
     lateinit var navigator: NavigatorImpl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         setContent {
             BullfinchTheme {
                 val navController = rememberNavController()

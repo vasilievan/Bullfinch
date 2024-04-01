@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Bullfinch"
 include ':app'
-include ':app:oboelib'
+include ':oboelib'

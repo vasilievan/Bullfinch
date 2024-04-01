@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.SplashScreen.BullfinchSplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FFFFFFFF</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreen</item>
+        <item name="postSplashScreenTheme">@style/Theme.Bullfinch</item>
+    </style>
     <style name="Theme.Bullfinch" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
