@@ -83,7 +83,7 @@ dependencies {
     // splashscreen
     implementation libs.androidx.core.splashscreen
     // permissions handling
-    // implementation libs.accompanist.permissions.v0340
+    implementation libs.accompanist.permissions.v0340
 }
 
 kapt {

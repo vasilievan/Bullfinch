@@ -13,7 +13,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private val navigator: NavigatorImpl) : ViewModel() {
     fun goPermissions() {
         viewModelScope.launch(Dispatchers.Main) {
-            navigator.popUp(NavigationDestination.PERMISSONS)
+            navigator.popUp(NavigationDestination.PERMISSIONS)
         }
     }
 }

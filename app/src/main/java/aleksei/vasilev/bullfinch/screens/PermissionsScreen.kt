@@ -1,35 +1,44 @@
 package aleksei.vasilev.bullfinch.screens
 
-import aleksei.vasilev.bullfinch.viewmodels.permissionsviewmodel.PermissionsViewModel
-import androidx.compose.foundation.layout.Box
+import aleksei.vasilev.bullfinch.R
+import aleksei.vasilev.bullfinch.ui.theme.mediumPadding
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.compose.ui.res.stringResource
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.MultiplePermissionsState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-// import com.google.accompanist.permissions.ExperimentalPermissionsApi
-// import com.google.accompanist.permissions.rememberMultiplePermissionsState
-
-// @OptIn(ExperimentalPermissionsApi::class)
+@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun PermissionsScreen(
-    viewModel: PermissionsViewModel = hiltViewModel()
+    permissions: MultiplePermissionsState
 ) {
-    // val permissions = rememberMultiplePermissionsState(
-    //     permissions = listOf(
-    //         Manifest.permission.INTERNET,
-    //         Manifest.permission.RECORD_AUDIO
-    //     )
-    // )
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+    val coroutineScope = rememberCoroutineScope()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(mediumPadding),
+        verticalArrangement = Arrangement.spacedBy(mediumPadding, Alignment.CenterVertically),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = stringResource(id = R.string.permissions))
+        Text(text = stringResource(id = R.string.permissions_reason))
         Button(onClick = {
-            viewModel.goHome()
+            coroutineScope.launch(Dispatchers.Default) {
+                permissions.launchMultiplePermissionRequest()
+            }
         }) {
-            // hardcoded string literal yet
-            Text(text = "Permissions")
+            Text(text = stringResource(id = R.string.request_permissions))
         }
     }
 }

@@ -7,6 +7,8 @@ import javax.inject.Inject
 class NavigatorImpl @Inject constructor() {
     private var navController: NavHostController? = null
 
+    fun getCurrentDestination() = NavigationDestination.getNavigationDestination(navController?.currentDestination?.route)
+
     fun setNavHostController(controller: NavHostController) {
         if (navController == null) {
             synchronized(this) {
@@ -18,8 +20,8 @@ class NavigatorImpl @Inject constructor() {
     }
 
     fun navigateTo(
-        navigationDestination: NavigationDestination,
-        startDestination: NavigationDestination
+        startDestination: NavigationDestination,
+        navigationDestination: NavigationDestination
     ) {
         val options = navOptions {
             launchSingleTop = true
