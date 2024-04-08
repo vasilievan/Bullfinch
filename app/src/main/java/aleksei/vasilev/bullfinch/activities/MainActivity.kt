@@ -1,4 +1,4 @@
-package aleksei.vasilev.bullfinch
+package aleksei.vasilev.bullfinch.activities
 
 import aleksei.vasilev.bullfinch.navigation.NavigationDestination
 import aleksei.vasilev.bullfinch.navigation.NavigatorImpl

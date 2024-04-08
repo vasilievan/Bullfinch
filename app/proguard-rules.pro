@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Missing class com.google.auto.value.AutoValue
+# referenced from: dagger.hilt.android.testing
