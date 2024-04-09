@@ -25,13 +25,11 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
-            shrinkResources true
+            testCoverageEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            minifyEnabled false
-            shrinkResources true
+            testCoverageEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,6 +42,7 @@ android {
     }
     buildFeatures {
         compose true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion '1.5.2'
@@ -53,6 +52,7 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+
 }
 
 dependencies {
@@ -72,7 +72,7 @@ dependencies {
 
     // hilt
     implementation libs.hilt.android.v248
-    kapt "com.google.dagger:hilt-compiler:2.48"
+    kapt libs.hilt.compiler
     kaptTest libs.hilt.android.compiler.v248
     // hilt viewmodel
     implementation libs.androidx.hilt.navigation.compose
@@ -92,6 +92,9 @@ dependencies {
 
     debugImplementation libs.ui.tooling
     debugImplementation libs.ui.test.manifest
+
+    // logging tool
+    implementation libs.timber
 }
 
 kapt {

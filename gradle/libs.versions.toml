@@ -28,6 +28,7 @@ material3 = "1.2.1"
 material3Version = "1.1.1"
 navigationCompose = "2.7.7"
 materialVersion = "1.11.0"
+timber = "5.0.1"
 uiTestManifest = "1.6.0"
 uiTextGoogleFonts = "1.6.4"
 uiTooling = "1.6.5"
@@ -72,6 +73,7 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 google-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 material-v150 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "uiTextGoogleFonts" }
 ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "uiTestManifest" }
 ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "uiTooling" }
