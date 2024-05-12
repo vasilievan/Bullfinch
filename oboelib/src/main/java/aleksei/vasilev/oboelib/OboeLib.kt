@@ -9,6 +9,10 @@ class OboeLib @Inject constructor() {
 
     external fun createEngine(): Boolean
 
+    external fun start()
+
+    external fun closeStreams()
+
     private external fun setDefaultStreamParameters(sampleRate: Int, framesPerBurst: Int)
 
     fun setDefaultStreamParameters(context: Context) {

@@ -30,3 +30,14 @@ Java_aleksei_vasilev_oboelib_OboeLib_setDefaultStreamParameters(JNIEnv *env, job
     oboe::DefaultStreamValues::SampleRate = (int32_t) sample_rate;
     oboe::DefaultStreamValues::FramesPerBurst = (int32_t) frames_per_burst;
 }
+extern "C"
+JNIEXPORT void JNICALL
+Java_aleksei_vasilev_oboelib_OboeLib_closeStreams(JNIEnv *env, jobject thiz) {
+    if (engine != nullptr) engine->closeStreams();
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_aleksei_vasilev_oboelib_OboeLib_start(JNIEnv *env, jobject thiz) {
+    if (engine != nullptr) engine->start();
+}
